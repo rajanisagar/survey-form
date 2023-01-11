@@ -1,0 +1,20 @@
+.customButton {
+  width: 40px;
+  height: 40px;
+
+  background-color: white;
+  color: #bababa;
+  font-size: 20px;
+  /* borderWidth='1px'
+    borderRadius='50%' */
+  border: 1px solid#BABABA;
+  border-radius: 50px;
+  cursor: pointer;
+  /* margin-left: 1px; */
+}
+
+.active {
+  background-color: #6b4bea;
+
+  color: white;
+}
