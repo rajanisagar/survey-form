@@ -9,9 +9,12 @@ import {
   Flex,
   Stack,
   Text,
+  Spacer,
 } from "@chakra-ui/react";
 
 import ContextApp from "../contextApp";
+import CheckoutSteps from "./CheckoutSteps";
+import { useNavigate } from "react-router-dom";
 const Futher = () => {
   const { questions, setQuestions } = useContext(ContextApp);
   const handleChangeAge = (event) => {
@@ -22,38 +25,47 @@ const Futher = () => {
     questions[11] = event.target.value;
     console.log(questions);
   };
+  const navigate = useNavigate();
   return (
     <>
+      <Box bg={""} w={"100%"}>
+        <CheckoutSteps
+          step1={undefined}
+          step2={undefined}
+          step3
+        ></CheckoutSteps>
+      </Box>
       <Box
         bg={"#EFEFEF"}
-        h={"85vh"}
-        w={"80%"}
+        h={"auto"}
+        // w={"auto"}
         marginLeft="20%"
         position={"absolute"}
         top={"10"}
-        marginTop={"17px"}
+        marginTop={"22px"}
+        minW={"80%"}
       >
         <Center>
-          <Text as="b" marginTop={"2%"}>
+          <Text as="b" marginTop={8}>
             "The quick brown fox jumps over the lazy dog" is an English-language
             pangram—a
           </Text>
         </Center>
 
         <Center>
-          <Text marginTop={"1%"}>
+          <Text marginTop={"0.1%"}>
             "The quick brown fox jumps over the lazy dog" is an English-language
             pangram—a the letters of the English alphabet. Owing to
           </Text>
         </Center>
 
-        <Center marginTop={"2rem"}>
-          <Box w="40%" minW={"20vh"}>
+        <Center marginTop={"3.1rem"}>
+          <Box w={400} h={200} minW={"20vh"}>
             <Stack
               borderLeftWidth={"5px"}
               borderColor={"#4E37A5"}
               bg="white"
-              p={4}
+              p={3}
               color="#5A45AB"
               boxShadow="lg"
               borderRadius="sm"
@@ -89,13 +101,13 @@ const Futher = () => {
           </Box>
         </Center>
 
-        <Center marginTop={"1rem"}>
-          <Box w="40%" minW={"20vh"}>
+        <Center marginTop={10}>
+          <Box w={400} h={200} minW={"20vh"}>
             <Stack
               borderLeftWidth={"5px"}
               borderColor={"#4E37A5"}
               bg="white"
-              p={4}
+              p={3}
               color="#5A45AB"
               boxShadow="lg"
               borderRadius="sm"
@@ -133,6 +145,29 @@ const Futher = () => {
             </Stack>
           </Box>
         </Center>
+        <Box
+          borderTop={"2px"}
+          h={"60px"}
+          borderColor={"#BABABA"}
+          bg={"white"}
+          w={"100%"}
+          marginTop={"5%"}
+        >
+          <Flex>
+            <Spacer />
+            <Button
+              colorScheme="purple"
+              variant="outline"
+              size="md"
+              fontSize={"1.2rem"}
+              marginTop={"0.6%"}
+              marginRight={"15px"}
+              onClick={() => navigate("/submited")}
+            >
+              <Text> {"Submit"}</Text>
+            </Button>
+          </Flex>
+        </Box>
       </Box>
     </>
   );

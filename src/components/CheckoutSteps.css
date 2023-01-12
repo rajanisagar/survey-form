@@ -10,11 +10,18 @@
   width: 100%;
 }
 
+.btn{
+  width: 100%;
+}
+
 .stepper-wrapper {
   margin-top: 5px;
   display: flex;
   justify-content: space-between;
   /* margin-bottom: 1px; */
+  width: 45%;
+ 
+  margin-left: 20%;
 }
 
 .stepper-item {

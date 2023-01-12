@@ -7,28 +7,34 @@ import {
   Flex,
   Spacer,
   Stack,
-  Table,
-  TableContainer,
   Text,
-  Th,
-  Thead,
-  Tr,
 } from "@chakra-ui/react";
 import ButtonGroup from "../components/ButtonGroup";
+import CheckoutSteps from "./CheckoutSteps";
+import { useNavigate } from "react-router-dom";
 const GeneralFeedBack = () => {
+  const navigate = useNavigate();
   return (
     <>
+      <Box bg={""} w={"100%"}>
+        <CheckoutSteps
+          step1
+          step2={undefined}
+          step3={undefined}
+        ></CheckoutSteps>
+      </Box>
       <Box
         bg={"#EFEFEF"}
-        h={"85vh"}
-        w={"80%"}
+        h={"auto"}
+        // w={"auto"}
         marginLeft="20%"
         position={"absolute"}
         top={"10"}
-        marginTop={"17px"}
+        marginTop={"22px"}
+        minW={"80%"}
       >
         <Center>
-          <Text as="b" marginTop={"2%"}>
+          <Text as="b" marginTop={8}>
             "The quick brown fox jumps over the lazy dog" is an English-language
             pangram—a
           </Text>
@@ -44,38 +50,49 @@ const GeneralFeedBack = () => {
         </Center>
 
         <Center>
-          <TableContainer w="80%" marginTop={"2rem"} marginRight={"-2rem"}>
-            <Table size="sm">
-              <Thead>
-                <Flex justifyContent={"right"}>
-                  <Tr>
-                    <Th>
-                      STRONGLY
-                      <br />
-                      DISAGREE
-                    </Th>
-                    <Th>DISAGREE</Th>
-                    <Th>AGREE</Th>
-                    <Th>
-                      {" "}
-                      STROGLY
-                      <br /> AGREE
-                    </Th>
-                    <Th>NO ANSWER</Th>
-                  </Tr>
-                </Flex>
-              </Thead>
-            </Table>
-          </TableContainer>
-        </Center>
+          <Box w="83%" minW={"20"} marginTop={8}>
+            <Stack p={4} color="#5A45AB">
+              <Flex>
+                <Box marginLeft={"55.6%"}>
+                  <Stack direction={["column", "row"]} spacing={"2rem"}>
+                    <Text fontSize={"xs"} color={"#38343A"} as={"b"}>
+                      STRONGLY <br /> DISAGREE
+                    </Text>
+                    <Center>
+                      <Text fontSize={"xs"} color={"#38343A"} as={"b"}>
+                        DISAGREE
+                      </Text>
+                    </Center>
+                    <Center>
+                      <Text fontSize={"xs"} color={"#38343A"} as={"b"}>
+                        &nbsp;&nbsp;&nbsp;&nbsp;{"AGREE"}
+                        &nbsp;&nbsp;&nbsp;
+                      </Text>
+                    </Center>
 
+                    <Center>
+                      <Text fontSize={"xs"} color={"#38343A"} as={"b"}>
+                        STRONGLY <br /> AGREE
+                      </Text>
+                    </Center>
+                    <Center>
+                      <Text fontSize={"xs"} color={"#38343A"} as={"b"}>
+                        NO ANSWER
+                      </Text>
+                    </Center>
+                  </Stack>
+                </Box>
+              </Flex>
+            </Stack>
+          </Box>
+        </Center>
         <Center>
-          <Box w="80%" minW={"20"}>
+          <Box w="80%" minW={"20vh"}>
             <Stack
               borderLeftWidth={"5px"}
               borderColor={"#4E37A5"}
               bg="white"
-              p={4}
+              p={3}
               color="#5A45AB"
               boxShadow="lg"
               borderRadius="sm"
@@ -89,21 +106,20 @@ const GeneralFeedBack = () => {
                 <Spacer />
                 <Box>
                   <Stack direction={["column", "row"]} spacing={"3.2rem"}>
-                    <ButtonGroup buttons={["1", "2", "3", "4", "5"]} q={0} />
+                    <ButtonGroup buttons={["1", "2", "3", "4", "0"]} q={0} />
                   </Stack>
                 </Box>
               </Flex>
             </Stack>
           </Box>
         </Center>
-
         <Center marginTop={"3"}>
           <Box w="80%" minW={"20"}>
             <Stack
               borderLeftWidth={"5px"}
               borderColor={"#4E37A5"}
               bg="white"
-              p={4}
+              p={3}
               color="#5A45AB"
               boxShadow="lg"
               borderRadius="sm"
@@ -116,8 +132,8 @@ const GeneralFeedBack = () => {
                 </Center>
                 <Spacer />
                 <Box>
-                  <Stack direction={["column", "row"]} spacing={"7vh"}>
-                    <ButtonGroup buttons={["1", "2", "3", "4", "5"]} q={1} />
+                  <Stack direction={["column", "row"]} spacing={"3.2rem"}>
+                    <ButtonGroup buttons={["1", "2", "3", "4", "0"]} q={1} />
                   </Stack>
                 </Box>
               </Flex>
@@ -131,7 +147,7 @@ const GeneralFeedBack = () => {
               borderLeftWidth={"5px"}
               borderColor={"#4E37A5"}
               bg="white"
-              p={4}
+              p={3}
               color="#5A45AB"
               boxShadow="lg"
               borderRadius="sm"
@@ -145,7 +161,7 @@ const GeneralFeedBack = () => {
                 <Spacer />
                 <Box>
                   <Stack direction={["column", "row"]} spacing={"3.2rem"}>
-                    <ButtonGroup buttons={["1", "2", "3", "4", "5"]} q={2} />
+                    <ButtonGroup buttons={["1", "2", "3", "4", "0"]} q={2} />
                   </Stack>
                 </Box>
               </Flex>
@@ -158,7 +174,7 @@ const GeneralFeedBack = () => {
               borderLeftWidth={"5px"}
               borderColor={"#4E37A5"}
               bg="white"
-              p={4}
+              p={3}
               color="#5A45AB"
               boxShadow="lg"
               borderRadius="sm"
@@ -173,7 +189,7 @@ const GeneralFeedBack = () => {
                 <Spacer />
                 <Box>
                   <Stack direction={["column", "row"]} spacing={"3.2rem"}>
-                    <ButtonGroup buttons={["1", "2", "3", "4", "5"]} q={3} />
+                    <ButtonGroup buttons={["1", "2", "3", "4", "0"]} q={3} />
                   </Stack>
                 </Box>
               </Flex>
@@ -187,7 +203,7 @@ const GeneralFeedBack = () => {
               borderLeftWidth={"5px"}
               borderColor={"#4E37A5"}
               bg="white"
-              p={4}
+              p={3}
               color="#5A45AB"
               boxShadow="lg"
               borderRadius="sm"
@@ -202,14 +218,41 @@ const GeneralFeedBack = () => {
                 <Spacer />
                 <Box>
                   <Stack direction={["column", "row"]} spacing={"3.2rem"}>
-                    <ButtonGroup buttons={["1", "2", "3", "4", "5"]} q={4} />
+                    <ButtonGroup buttons={["1", "2", "3", "4", "0"]} q={4} />
                   </Stack>
                 </Box>
               </Flex>
             </Stack>
           </Box>
         </Center>
+        <Box
+          borderTop={"2px"}
+          h={"60px"}
+          borderColor={"#BABABA"}
+          bg={"white"}
+          w={"100%"}
+          marginTop={"4%"}
+          // position={'absolute'}
+          // botton={'0'}
+        >
+          <Flex>
+            <Spacer />
+            <Button
+              colorScheme="purple"
+              variant="ghost"
+              size="md"
+              fontSize={"1.3rem"}
+              marginTop={"0.5%"}
+              marginRight={"15px"}
+              onClick={() => navigate("/specificFeedback")}
+            >
+              <Text> {" Next >"}</Text>
+            </Button>
+          </Flex>
+        </Box>
       </Box>
+
+
     </>
   );
 };

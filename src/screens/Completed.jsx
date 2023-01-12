@@ -1,3 +1,4 @@
+import { Card, Text, Heading, Box, Center } from "@chakra-ui/react";
 import React, { useContext } from "react";
 import ContextApp from "../contextApp";
 
@@ -33,14 +34,22 @@ const Completed = () => {
   ];
 
   for (let i = 0; i < questions.length; i++) {
-    console.log(arrQuestions[i]+":  "+questions[i]);
+    console.log(arrQuestions[i] + ":  " + questions[i]);
   }
-  
+
   return (
     <>
-      FeedBack Data Submited Successfully
-      <br />
-      Pleease See data in console
+      <Center marginTop={"30vh"}>
+        <Card maxW={"lg"} boxShadow="2xl">
+          <Box textAlign="center" py={10} px={6}>
+            {/* <CheckCircleIcon boxSize={"50px"} color={"green.500"} /> */}
+            <Heading as="h2" size="xl" mt={6} mb={2}>
+              FeedBack Data Submited Successfully
+            </Heading>
+            <Text color={"gray.500"}>Pleease See data in console</Text>
+          </Box>
+        </Card>
+      </Center>
     </>
   );
 };
